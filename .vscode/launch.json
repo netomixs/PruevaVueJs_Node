@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "compounds": [
+        {
+          "name": "Launch All",
+          "configurations": ["Launch API", "Launch Vue"]
+        }
+      ],
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch API",
+            "program": "${workspaceFolder}/API/server.js", 
+            "cwd": "${workspaceFolder}/API",
+            "runtimeExecutable": "node",
+            "env": {
+              "NODE_ENV": "development",
+              "PORT": "3000"  
+            },
+            "console": "integratedTerminal",
+        },
+   
+          {  
+ 
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Vue",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+              "run",
+              "dev"
+            ],
+            "cwd": "${workspaceFolder}/Client",
+            "env": {
+              "NODE_ENV": "development"
+            },
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+          }
+    ]
+}
